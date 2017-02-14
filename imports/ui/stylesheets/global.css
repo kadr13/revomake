@@ -1,0 +1,55 @@
+/*Global CSS declarations*/
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+@font-face {
+    font-family: openSans;
+    src: url(/open-sans/OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: openSans-Bold;
+    src: url(/open-sans/OpenSans-Regular.ttf);
+}
+
+h1, h2, p, ul, li {
+    font-family: openSans;
+}
+
+.masterContainer{
+    box-shadow: none;
+    border: none;
+    outline: none;
+    background-color: #303030;
+}
+
+
+b{
+  font-family: openSans-Bold;
+}
+
+.center-block{
+    text-align: center;
+}
+
+.navBarLogo {
+    position: relative;
+    float: left !important;
+    margin-top: 25px;
+    left : 30px;
+    display: block;
+    background: url('/assets/revomakeLogo.png') no-repeat center center;
+    background-size: contain;
+    width:100px;
+}

@@ -1,0 +1,39 @@
+.homePage{
+    position: relative;
+    background: #FFFFFF;
+    padding: 50px;
+}
+
+.homePage-showBy-bar{
+    position: relative;
+    margin: 15px;
+    width: calc(100% - 30px);
+}
+
+.homePage-showBy-text{
+    color:black;
+    text-underline: none;
+    float: right;
+    margin-right: 15px;
+}
+
+.homePage-showBy-text:hover{
+    cursor: pointer;
+}
+
+.homePage-products{
+    position: relative;
+    padding-top:50px;
+    width: 100%;
+}
+
+.homePage-products h1{
+    font-size: 250%;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+}
+
+.homePage-loadMoreButton{
+    width: 100%;
+    margin: 10px auto;
+}

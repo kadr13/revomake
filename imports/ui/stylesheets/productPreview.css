@@ -1,0 +1,23 @@
+.productPreview{
+    width: 100%;
+    margin: 10px auto;
+    background: transparent;
+}
+
+.productPreview-portrait{
+    width: 100%;
+    height: auto;
+    padding-top:15px;
+    padding-bottom: 15px;
+    margin-bottom: 2px;
+    margin-right: auto;
+    marign-left: auto;
+    background: gray;
+    vertical-align: middle;
+}
+
+.productPreview-title{
+    background: lightgray;
+    text-align: center;
+    padding: 10px;
+}
