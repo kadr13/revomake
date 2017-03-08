@@ -96,16 +96,16 @@ class FeedView extends Component {
                 </Row>
                 <Row >
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00"/>
+                        <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00" id="1"/>
                     </Col>
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00"/>
+                        <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00" id="2"/>
                     </Col>
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00"/>
+                        <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00" id="3"/>
                     </Col>
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 4" designer="Bob" price="$10.00"/>
+                        <ProductPreview title="Mock Product 4" designer="Bob" price="$10.00" id="4"/>
                     </Col>
                 </Row>
                 <Row>
@@ -113,16 +113,16 @@ class FeedView extends Component {
                 </Row>
                 <Row >
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00"/>
+                        <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00" id="1"/>
                     </Col>
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00"/>
+                        <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00" id="2"/>
                     </Col>
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00"/>
+                        <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00" id="3"/>
                     </Col>
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 4" designer="Bob" price="$10.00"/>
+                        <ProductPreview title="Mock Product 4" designer="Bob" price="$10.00" id="4"/>
                     </Col>
                 </Row>
                 <Row>
@@ -130,16 +130,16 @@ class FeedView extends Component {
                 </Row>
                 <Row >
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00"/>
+                        <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00" id="1"/>
                     </Col>
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00"/>
+                        <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00" id="2"/>
                     </Col>
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00"/>
+                        <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00" id="3"/>
                     </Col>
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 4" designer="Bob" price="$10.00"/>
+                        <ProductPreview title="Mock Product 4" designer="Bob" price="$10.00" id="4"/>
                     </Col>
                 </Row>
             </Grid>
@@ -154,16 +154,16 @@ class SubscribeView extends Component {
             <Grid fluid>
                 <Row >
                     <Col md={3}>
-                        <DesignerPreview title="Subscribed Designer 1"/>
+                        <DesignerPreview title="Subscribed Designer 1"  id="1"/>
                     </Col>
                     <Col md={3}>
-                        <DesignerPreview title="Subscribed Designer 2"/>
+                        <DesignerPreview title="Subscribed Designer 2"  id="2"/>
                     </Col>
                     <Col md={3}>
-                        <DesignerPreview title="Subscribed Designer 3"/>
+                        <DesignerPreview title="Subscribed Designer 3"  id="3"/>
                     </Col>
                     <Col md={3}>
-                        <DesignerPreview title="Subscribed Designer 4"/>
+                        <DesignerPreview title="Subscribed Designer 4"  id="4"/>
                     </Col>
                 </Row>
             </Grid>
@@ -178,44 +178,44 @@ class DesignerView extends Component {
             <Grid fluid>
                 <Row >
                     <Col md={3}>
-                        <DesignerPreview title="Mock Designer 1"/>
+                        <DesignerPreview title="Mock Designer 1" id="1"/>
                     </Col>
                     <Col md={3}>
-                        <DesignerPreview title="Mock Designer 2"/>
+                        <DesignerPreview title="Mock Designer 2" id="2"/>
                     </Col>
                     <Col md={3}>
-                        <DesignerPreview title="Mock Designer 3"/>
+                        <DesignerPreview title="Mock Designer 3" id="3"/>
                     </Col>
                     <Col md={3}>
-                        <DesignerPreview title="Mock Designer 4"/>
-                    </Col>
-                </Row>
-                <Row >
-                    <Col md={3}>
-                        <DesignerPreview title="Mock Designer 1"/>
-                    </Col>
-                    <Col md={3}>
-                        <DesignerPreview title="Mock Designer 2"/>
-                    </Col>
-                    <Col md={3}>
-                        <DesignerPreview title="Mock Designer 3"/>
-                    </Col>
-                    <Col md={3}>
-                        <DesignerPreview title="Mock Designer 4"/>
+                        <DesignerPreview title="Mock Designer 4" id="4"/>
                     </Col>
                 </Row>
                 <Row >
                     <Col md={3}>
-                        <DesignerPreview title="Mock Designer 1"/>
+                        <DesignerPreview title="Mock Designer 1" id="1"/>
                     </Col>
                     <Col md={3}>
-                        <DesignerPreview title="Mock Designer 2"/>
+                        <DesignerPreview title="Mock Designer 2" id="2"/>
                     </Col>
                     <Col md={3}>
-                        <DesignerPreview title="Mock Designer 3"/>
+                        <DesignerPreview title="Mock Designer 3" id="3"/>
                     </Col>
                     <Col md={3}>
-                        <DesignerPreview title="Mock Designer 4"/>
+                        <DesignerPreview title="Mock Designer 4" id="4"/>
+                    </Col>
+                </Row>
+                <Row >
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 1" id="1"/>
+                    </Col>
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 2" id="2"/>
+                    </Col>
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 3" id="3"/>
+                    </Col>
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 4" id="4"/>
                     </Col>
                 </Row>
             </Grid>

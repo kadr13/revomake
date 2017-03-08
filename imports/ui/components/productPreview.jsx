@@ -4,19 +4,23 @@
 
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {Grid, Row, Col, Panel, Jumbotron, Image, Button, FormGroup, FormControl, ControlLabel, HelpBlock, Thumbnail} from 'react-bootstrap'
+import {Thumbnail} from 'react-bootstrap'
+import {browserHistory} from 'react-router'
 
 export default class ProductPreview extends Component {
 
-    componentDidMount(){
-
+    showView(){
+        browserHistory.push('/product/'+ this.props.id +'')
     }
 
     render() {
         return(
             <div className="productPreview">
                 <div className="productPreview-portrait">
-                    <Thumbnail src="/assets/mockProduct.png" alt="235x235"/>
+                    <Thumbnail src="/assets/mockProduct.png"
+                               onClick={this.showView.bind(this)}
+                               className="itemPreview"
+                               alt="235x235"/>
                 </div>
                 <div className="productPreview-title">
                     <div>{this.props.title}</div>

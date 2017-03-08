@@ -6,7 +6,7 @@
 }
 
 .searchPage-resultView{
-    width: calc(100% - 250px);
+    width: calc(100% - 300px);
     padding-top: 15px;
 }
 
@@ -16,7 +16,7 @@
     padding: 10px;
     background: #F4F4F2;
     position: fixed;
-    right: 0;
+    right: 15px;
     top: 100px;
 }
 

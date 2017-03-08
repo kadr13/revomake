@@ -14,6 +14,7 @@ import './ui/stylesheets/global.css'
 import './ui/stylesheets/home.css'
 import './ui/stylesheets/navbar.css'
 import './ui/stylesheets/productPreview.css'
+import './ui/stylesheets/productView.css'
 import './ui/stylesheets/search.css'
 import './ui/stylesheets/myStore.css'
 

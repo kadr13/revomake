@@ -76,7 +76,7 @@ export default class Buffer extends Component {
                    <MenuItem eventKey="1">A</MenuItem>
                    <MenuItem eventKey="2">B</MenuItem>
                </DropdownButton>
-               <button>Search</button>
+               <Button>Search</Button>
            </div>
        </div>
        )
