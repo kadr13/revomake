@@ -16,7 +16,7 @@ export default class ProductPreview extends Component {
         return(
             <div className="productPreview">
                 <div className="productPreview-portrait">
-                    <Thumbnail src="/assets/save.png" alt="242x200"/>
+                    <Thumbnail src="/assets/placeHolder.png" alt="235x235"/>
                 </div>
                 <div className="productPreview-title">
                     <div>{this.props.title}</div>

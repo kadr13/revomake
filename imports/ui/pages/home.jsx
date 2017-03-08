@@ -16,7 +16,7 @@ export default class Home extends Component {
         super(props);
 
         this.state = ({
-            type: "trending",
+            type: "feed",
             products: 1
         })
 
@@ -26,17 +26,14 @@ export default class Home extends Component {
     handleTypeChange(type){
         console.log("Handling Type Change");
         switch(type){
-            case "trending" : this.setState({type: "trending"});
-                console.log("setting type to trending");
-                break;
-            case "curated" : this.setState({type: "curated"});
-                console.log("setting type to curated");
-                break;
-            case "subscribed" : this.setState({type: "subscribed"});
-                console.log("setting type to subscribed");
-                break;
             case "designers" : this.setState({type: "designers"});
                 console.log("setting type to designers");
+                break;
+            case "subscription" : this.setState({type: "subscription"});
+                console.log("setting type to subscription");
+                break;
+            case "feed" : this.setState({type: "feed"});
+                console.log("setting type to feed");
                 break;
             default : console.log("Error: Unknown Type")
         }
@@ -64,19 +61,18 @@ export default class Home extends Component {
                 <Grid fluid>
                     <Row >
                         <div className="homePage-showBy-bar">
-                            <a className="homePage-showBy-text" onClick={()=> this.handleTypeChange("curated")}>Curated</a>
-                            <a className="homePage-showBy-text" onClick={()=> this.handleTypeChange("trending")}>Trending</a>
-                            <a className="homePage-showBy-text" onClick={()=> this.handleTypeChange("subscribed")}>Subscribed</a>
                             <a className="homePage-showBy-text" onClick={()=> this.handleTypeChange("designers")}>Designers</a>
+                            <a className="homePage-showBy-text" onClick={()=> this.handleTypeChange("subscription")}>Subscription</a>
+                            <a className="homePage-showBy-text" onClick={()=> this.handleTypeChange("feed")}>Feed</a>
                         </div>
                     </Row>
                 </Grid>
                 <div className="homePage-products">
-                    <h1><div>Popular</div></h1>
+                    <h1><div>FEATURED</div></h1>
                     {products}
-                    <h1><div>Fresh</div></h1>
+                    <h1><div>TRENDING</div></h1>
                     {products}
-                    <h1><div>Free Products</div></h1>
+                    <h1><div>FREE PRODUCTS</div></h1>
                     {products}
                 </div>
             </div>
