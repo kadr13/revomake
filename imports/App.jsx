@@ -9,8 +9,10 @@ import {LinkContainer} from 'react-router-bootstrap'
 import {browserHistory} from 'react-router';
 
 import './ui/stylesheets/bootstrap.css'
+import './ui/stylesheets/cart.css'
 import './ui/stylesheets/global.css'
 import './ui/stylesheets/home.css'
+import './ui/stylesheets/navbar.css'
 import './ui/stylesheets/productPreview.css'
 
 export default class App extends Component {
@@ -46,10 +48,10 @@ class NavbarInstance extends Component{
                         <NavItem>HOME</NavItem>
                     </LinkContainer>
                     <LinkContainer to="/myStore">
-                        <NavItem>My Store</NavItem>
+                        <NavItem>MY STORE</NavItem>
                     </LinkContainer>
                     <LinkContainer to="/cart">
-                        <NavItem >Cart</NavItem>
+                        <NavItem >CART</NavItem>
                     </LinkContainer>
                 </Nav>
             </Navbar.Collapse>
