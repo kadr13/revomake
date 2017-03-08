@@ -1,5 +1,5 @@
 /**
- * Created by JohnBae on 2/9/17.
+ * Created by JohnBae on 3/8/17.
  */
 
 import React, {Component} from 'react';
@@ -16,7 +16,7 @@ export default class ProductPreview extends Component {
         return(
             <div className="productPreview">
                 <div className="productPreview-portrait">
-                    <Thumbnail src="/assets/mockProduct.png" alt="235x235"/>
+                    <Thumbnail src="/assets/mockDesigner.png" alt="235x235"/>
                 </div>
                 <div className="productPreview-title">
                     <div>{this.props.title}</div>
