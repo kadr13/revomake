@@ -1,20 +1,19 @@
-.productPreview{
+.designerPreview{
     width: 100%;
     margin: 10px auto;
     background: transparent;
 }
 
-.productPreview-portrait{
+.designerPreview-portrait{
     width: 100%;
     height: auto;
     margin-right: auto;
     margin-left: auto;
     background: transparent;
     vertical-align: middle;
-    cursor: pointer;
 }
 
-.productPreview-title{
+.designerPreview-title{
     background-color: #f4f4f2;
     color: #666666;
     text-align: center;

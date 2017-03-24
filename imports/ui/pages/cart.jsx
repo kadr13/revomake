@@ -12,7 +12,49 @@ export default class App extends Component {
 
     render() {
         return (
-            <div className="cartPage">
+            <div className="searchPage">
+                <Grid fluid className="searchPage-resultView">
+                    <Row >
+                        <Col md={3}>
+                            <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00"/>
+                        </Col>
+                        <Col md={3}>
+                            <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00"/>
+                        </Col>
+                        <Col md={3}>
+                            <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00"/>
+                        </Col>
+                    </Row>
+                    <Row >
+                        <Col md={3}>
+                            <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00"/>
+                        </Col>
+                        <Col md={3}>
+                            <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00"/>
+                        </Col>
+                        <Col md={3}>
+                            <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00"/>
+                        </Col>
+                    </Row>
+                    <Row >
+                        <Col md={3}>
+                            <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00"/>
+                        </Col>
+                        <Col md={3}>
+                            <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00"/>
+                        </Col>
+                        <Col md={3}>
+                            <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00"/>
+                        </Col>
+                    </Row>
+                </Grid>
+                <div className="searchPage-searchTool">
+                    <h1>Items: 3</h1>
+                    <br/>
+                    <h1>Total Cost: $19.99</h1>
+                    <br/><br/><br/><br/><br/>
+                    <Button>Purchase</Button>
+                </div>
             </div>
         );
     }

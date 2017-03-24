@@ -1,23 +1,6 @@
 .navbar {
-    z-index: 10;
     font-size: 18px;
-    position: relative;
-    min-height: 78px;
-    margin-bottom: 0px!important;
-    border: 0px solid transparent;
-    background-color: transparent;
-}
-
-.navBarLogo {
-    position: relative;
-    float: left !important;
-    margin-top: 25px;
-    left: 30px;
-    top: 10px;
-    display: block;
-    background: url('/assets/revomakeLogo.png') no-repeat center center;
-    background-size: contain;
-    width:196px;
+    border: none!important;
 }
 
 .nav {
@@ -25,8 +8,32 @@
     padding-top : 48px;
     margin-bottom: 0;
     margin-right: 0;
-    list-style: none;
-    background: transparent;
+}
+
+.navbar-Logo {
+    position: relative;
+    float: left !important;
+    margin-top: 35px;
+    top: 10px;
+    display: block;
+    background: url('/assets/revomakeLogo.png') no-repeat center center;
+    background-size: contain;
+    width:150px;
+}
+
+.navbar-search{
+    width: 150px;
+}
+
+.navbar-search{
+    width: 150px;
+}
+
+.navbar-login{
+    width:50px;
+    height:50px;
+    border-radius: 50px;
+    border: none;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -37,28 +44,10 @@
 }
 .navbar-inverse .navbar-nav > li > a:focus {
     color: #f4f4f2;
-    background-color: transparent;
 }
 
-.navbar-inverse .navbar-nav > .active > a:focus {
+.navbar-inverse .navbar-nav > .active {
     color: #313131;
     background-color: #e4e3e0;
 }
-
-
-
-@media (min-width: 768px) {
-    .navbar-nav {
-        float: left;
-        margin: 0;
-    }
-    .navbar-nav > li {
-        float: left;
-    }
-    .navbar-nav > li > a {
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-right: 30px;
-        padding-left: 30px;
-    }
 

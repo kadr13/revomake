@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 import {Grid, Row, Col, Panel, Jumbotron, Image, Button, FormGroup, FormControl, ControlLabel, HelpBlock} from 'react-bootstrap'
 import Scroll from 'react-scroll';
 import ProductPreview from '../components/productPreview.jsx';
+import DesignerPreview from '../components/designerPreview.jsx'
 
 var key = 0;
 
@@ -40,6 +41,7 @@ export default class Home extends Component {
     }
 
     loadMoreProducts(protocol){
+
         console.log("SCROLLING: ",);
         this.setState({products: ++this.state.products}, function(){
             Scroll.animateScroll.scrollTo(500);
@@ -48,12 +50,21 @@ export default class Home extends Component {
 
     render() {
 
-        var products = [],
-            iteration = this.state.products;
+        console.log(this);
 
-        while(iteration-->0){
-            products.push(<ProductsView key = {key++}/> );
+        var Content;
 
+        switch(this.state.type){
+            case "feed":
+                Content = FeedView;
+                break;
+            case "subscription":
+                Content = SubscribeView;
+                break;
+            case "designers":
+                Content = DesignerView;
+                break;
+            default : Content = null;
         }
 
         return (
@@ -67,36 +78,144 @@ export default class Home extends Component {
                         </div>
                     </Row>
                 </Grid>
-                <div className="homePage-products">
-                    <h1><div>FEATURED</div></h1>
-                    {products}
-                    <h1><div>TRENDING</div></h1>
-                    {products}
-                    <h1><div>FREE PRODUCTS</div></h1>
-                    {products}
+                <div className="homePage-content">
+                    <Content/>
                 </div>
             </div>
         );
     }
 }
 
-class ProductsView extends Component {
+class FeedView extends Component {
+
+    render(){
+        return(
+            <Grid fluid>
+                <Row>
+                    <h1>Featured</h1>
+                </Row>
+                <Row >
+                    <Col md={3}>
+                        <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00" id="1"/>
+                    </Col>
+                    <Col md={3}>
+                        <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00" id="2"/>
+                    </Col>
+                    <Col md={3}>
+                        <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00" id="3"/>
+                    </Col>
+                    <Col md={3}>
+                        <ProductPreview title="Mock Product 4" designer="Bob" price="$10.00" id="4"/>
+                    </Col>
+                </Row>
+                <Row>
+                    <h1>Trending</h1>
+                </Row>
+                <Row >
+                    <Col md={3}>
+                        <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00" id="1"/>
+                    </Col>
+                    <Col md={3}>
+                        <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00" id="2"/>
+                    </Col>
+                    <Col md={3}>
+                        <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00" id="3"/>
+                    </Col>
+                    <Col md={3}>
+                        <ProductPreview title="Mock Product 4" designer="Bob" price="$10.00" id="4"/>
+                    </Col>
+                </Row>
+                <Row>
+                    <h1>Free</h1>
+                </Row>
+                <Row >
+                    <Col md={3}>
+                        <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00" id="1"/>
+                    </Col>
+                    <Col md={3}>
+                        <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00" id="2"/>
+                    </Col>
+                    <Col md={3}>
+                        <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00" id="3"/>
+                    </Col>
+                    <Col md={3}>
+                        <ProductPreview title="Mock Product 4" designer="Bob" price="$10.00" id="4"/>
+                    </Col>
+                </Row>
+            </Grid>
+        );
+    }
+}
+
+class SubscribeView extends Component {
 
     render(){
         return(
             <Grid fluid>
                 <Row >
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00"/>
+                        <DesignerPreview title="Subscribed Designer 1"  id="1"/>
                     </Col>
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00"/>
+                        <DesignerPreview title="Subscribed Designer 2"  id="2"/>
                     </Col>
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00"/>
+                        <DesignerPreview title="Subscribed Designer 3"  id="3"/>
                     </Col>
                     <Col md={3}>
-                        <ProductPreview title="Mock Product 4" designer="Bob" price="$10.00"/>
+                        <DesignerPreview title="Subscribed Designer 4"  id="4"/>
+                    </Col>
+                </Row>
+            </Grid>
+        );
+    }
+}
+
+class DesignerView extends Component {
+
+    render(){
+        return(
+            <Grid fluid>
+                <Row >
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 1" id="1"/>
+                    </Col>
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 2" id="2"/>
+                    </Col>
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 3" id="3"/>
+                    </Col>
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 4" id="4"/>
+                    </Col>
+                </Row>
+                <Row >
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 1" id="1"/>
+                    </Col>
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 2" id="2"/>
+                    </Col>
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 3" id="3"/>
+                    </Col>
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 4" id="4"/>
+                    </Col>
+                </Row>
+                <Row >
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 1" id="1"/>
+                    </Col>
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 2" id="2"/>
+                    </Col>
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 3" id="3"/>
+                    </Col>
+                    <Col md={3}>
+                        <DesignerPreview title="Mock Designer 4" id="4"/>
                     </Col>
                 </Row>
             </Grid>

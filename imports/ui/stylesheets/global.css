@@ -11,20 +11,16 @@
 
 body {
     background-color: #ffffff;
-    font-family: "openSans", sans-serif;
-    font-size: 18px;
-    line-height: 1.42857143;
-    color: #313131;
 }
 
 @font-face {
     font-family: openSans;
-    src: url(/open-sans/OpenSans-Regular.ttf);
+    src: url(/open-sans/OpenSans-Light.ttf);
 }
 
 @font-face {
     font-family: openSans-Bold;
-    src: url(/open-sans/OpenSans-Bold.ttf);
+    src: url(/open-sans/OpenSans-Regular.ttf);
 }
 
 h1, h2, p, ul, li {
@@ -35,7 +31,7 @@ h1, h2, p, ul, li {
     box-shadow: none;
     border: none;
     outline: none;
-    background-color: #313131;
+    background-color: #303030;
 }
 
 
@@ -45,4 +41,15 @@ b{
 
 .center-block{
     text-align: center;
+}
+
+.navbar-Logo {
+    position: relative;
+    float: left !important;
+    margin-top: 25px;
+    left : 30px;
+    display: block;
+    background: url('/assets/revomakeLogo.png') no-repeat center center;
+    background-size: contain;
+    width:100px;
 }
