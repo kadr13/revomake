@@ -1,10 +1,10 @@
-.productPreview{
+.productPreview {
     width: 100%;
     margin: 10px auto;
     background: transparent;
 }
 
-.productPreview-portrait{
+.productPreview-portrait {
     width: 100%;
     height: auto;
     margin-right: auto;
@@ -14,7 +14,8 @@
     cursor: pointer;
 }
 
-.productPreview-title{
+.productPreview-title {
+    font-size: 110%;
     background-color: #f4f4f2;
     color: #666666;
     text-align: center;
@@ -33,4 +34,9 @@
     display: inline-block;
     max-width: 100%;
     height: auto;
+}
+
+.thumbnail {
+    margin: 0px !important;
+    padding: 0px !important;
 }
