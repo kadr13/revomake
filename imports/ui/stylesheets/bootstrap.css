@@ -1074,8 +1074,8 @@ select[multiple].input-lg {
 .container-fluid > .navbar-header,
 .container > .navbar-collapse,
 .container-fluid > .navbar-collapse {
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: 0px;
+    margin-left: 0px;
 }
 @media (min-width: 768px) {
     .container > .navbar-header,
@@ -1207,8 +1207,8 @@ select[multiple].input-lg {
         float: left;
     }
     .navbar-nav > li > a {
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
 .navbar-form {
@@ -1461,7 +1461,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-    color: #ffffff;
+    color: #313131;
     background-color: transparent;
 }
 .navbar-inverse .navbar-nav > .disabled > a,

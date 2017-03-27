@@ -1,26 +1,28 @@
-.homePage{
+.homePage {
     position: relative;
     background: #e4e3e0;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.homePage-showBy-bar{
+.homePage-showBy-bar {
     position: relative;
     margin: 15px;
     margin-top: 30px;
     width: calc(100% - 30px);
 }
 
-.homePage-showBy-text{
-    color:#313131;
+.homePage-showBy-text {
+    color: #313131;
+    font-size: 140%;
     float: right;
     margin-right: 30px;
 }
 
-.homePage-showBy-text:hover{
+a:hover {
     cursor: pointer;
     color: #313131;
+    text-decoration: underline;
 }
 
 .homePage-content {
@@ -28,15 +30,18 @@
     width: 100%;
 }
 
-.homePage-content h1{
+.homePage-content h1 {
+    color: #313131;
     font-size: 150%;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    padding: 0px;
     margin-top: 50px;
     margin-bottom: 25px;
-    text-decoration: underline;
+    border-bottom: 1px solid;
+    
 }
 
-.homePage-loadMoreButton{
+.homePage-loadMoreButton {
     width: 100%;
     margin: 10px auto;
 }
