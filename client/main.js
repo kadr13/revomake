@@ -1,3 +1,5 @@
+import '../imports/startup/client/account-config';
+
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
@@ -10,6 +12,7 @@ import Cart from '../imports/ui/pages/cart.jsx';
 import Search from '../imports/ui/pages/search.jsx';
 import Product from '../imports/ui/pages/productView';
 import Submit from '../imports/ui/pages/submit';
+import Login from '../imports/ui/pages/login.jsx'
 
 Meteor.startup(() => {
     render(
@@ -17,6 +20,7 @@ Meteor.startup(() => {
             <Route path="/" component={App}>
                 <IndexRedirect to="/home"/>
                 <Route path="home" component={Home} />
+                <Route path="login" component={Login} />
                 <Route path="search" component={Search} />
                 <Route path="myStore" component={MyStore} />
                 <Route path="cart" component={Cart} />
