@@ -1,0 +1,15 @@
+#loginPage-container{
+    background: #e4e3e0;
+    padding-top: 25px;
+    width: 100%;
+}
+
+#loginPage-section{
+    background : white;
+    width: 100%;
+    max-width: 500px;
+    margin : auto;
+    border: none;
+    justify-content: center;
+    padding-bottom: 30px;
+}

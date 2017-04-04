@@ -3,6 +3,7 @@
  */
 
 import React, { Component, PropTypes } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
 
 import {Navbar, NavItem, Nav, FormGroup, FormControl, Button} from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
@@ -17,8 +18,9 @@ import './ui/stylesheets/productPreview.css'
 import './ui/stylesheets/productView.css'
 import './ui/stylesheets/search.css'
 import './ui/stylesheets/myStore.css'
+import './ui/stylesheets/login.css'
 
-export default class App extends Component {
+class App extends Component {
 
     componentDidUpdate(){
 
@@ -27,7 +29,7 @@ export default class App extends Component {
     render() {
         return (
             <div className = "masterContainer">
-                <NavbarInstance/>
+                <NavbarInstance currentUser = {this.props.currentUser}/>
                 {this.props.children}
             </div>
         );
@@ -36,7 +38,12 @@ export default class App extends Component {
 
 class NavbarInstance extends Component{
 
+    logOff(){
+        AccountsTemplates.logout();
+    }
+
     render(){
+        const {...rest} = this.props;
         return(
         <Navbar inverse collapseOnSelect>
             <Navbar.Header>
@@ -65,9 +72,14 @@ class NavbarInstance extends Component{
                     <LinkContainer to="/cart">
                         <NavItem >CART</NavItem>
                     </LinkContainer>
-                    <LinkContainer to="/login">
-                        <NavItem >LOGIN</NavItem>
-                    </LinkContainer>
+                    {
+                        this.props.currentUser ?
+                            <NavItem onClick = {this.logOff.bind(this)}>PROFILE</NavItem>
+                            :
+                            <LinkContainer to="/login">
+                                <NavItem >LOGIN</NavItem>
+                            </LinkContainer>
+                    }
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
@@ -75,3 +87,13 @@ class NavbarInstance extends Component{
         );
     }
 }
+
+App.propTypes = {
+    currentUser: PropTypes.object,
+};
+
+export default createContainer(() => {
+    return {
+        currentUser: Meteor.user(),
+    };
+}, App);
