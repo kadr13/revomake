@@ -18,35 +18,35 @@ export default class Buffer extends Component {
            <Grid fluid className="searchPage-resultView">
                <Row >
                    <Col md={3}>
-                       <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00"/>
+                       <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00" id="1"/>
                    </Col>
                    <Col md={3}>
-                       <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00"/>
+                       <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00" id="2"/>
                    </Col>
                    <Col md={3}>
-                       <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00"/>
-                   </Col>
-               </Row>
-               <Row >
-                   <Col md={3}>
-                       <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00"/>
-                   </Col>
-                   <Col md={3}>
-                       <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00"/>
-                   </Col>
-                   <Col md={3}>
-                       <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00"/>
+                       <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00" id="3"/>
                    </Col>
                </Row>
                <Row >
                    <Col md={3}>
-                       <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00"/>
+                       <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00" id="1"/>
                    </Col>
                    <Col md={3}>
-                       <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00"/>
+                       <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00" id="2"/>
                    </Col>
                    <Col md={3}>
-                       <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00"/>
+                       <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00" id="3"/>
+                   </Col>
+               </Row>
+               <Row >
+                   <Col md={3}>
+                       <ProductPreview title="Mock Product 1" designer="Bob" price="$10.00" id="1"/>
+                   </Col>
+                   <Col md={3}>
+                       <ProductPreview title="Mock Product 2" designer="Bob" price="$10.00" id="2"/>
+                   </Col>
+                   <Col md={3}>
+                       <ProductPreview title="Mock Product 3" designer="Bob" price="$10.00" id="3"/>
                    </Col>
                </Row>
            </Grid>

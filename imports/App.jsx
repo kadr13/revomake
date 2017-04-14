@@ -22,21 +22,22 @@ import './ui/stylesheets/login.css'
 
 class App extends Component {
 
-    componentDidUpdate(){
-
+    constructor(props){
+        super(props);
     }
 
     render() {
+        var self = this;
         return (
             <div className = "masterContainer">
-                <NavbarInstance currentUser = {this.props.currentUser}/>
+                <NavbarInstance currentUser = {this.props.currentUser} redirect = {this.props.location.pathname}/>
                 {this.props.children}
             </div>
         );
     }
 }
 
-class NavbarInstance extends Component{
+class NavbarInstance extends Component{Z
 
     logOff(){
         AccountsTemplates.logout();
@@ -54,19 +55,16 @@ class NavbarInstance extends Component{
             </Navbar.Header>
             <Navbar.Collapse>
                 <Nav pullRight >
-                    <Navbar.Form pullLeft>
+                    {/*<Navbar.Form pullLeft>
                         <FormGroup>
                             <FormControl type="text" placeholder="Search" />
                         </FormGroup>
                         {' '}
-                    </Navbar.Form>
+                    </Navbar.Form>*/}
                     <LinkContainer to="/home">
                         <NavItem>HOME</NavItem>
                     </LinkContainer>
-                    <LinkContainer to="/search">
-                        <NavItem>SEARCH</NavItem>
-                    </LinkContainer>
-                    <LinkContainer to="/myStore">
+                    <LinkContainer to="/profile">
                         <NavItem>MY STORE</NavItem>
                     </LinkContainer>
                     <LinkContainer to="/cart">
@@ -76,7 +74,7 @@ class NavbarInstance extends Component{
                         this.props.currentUser ?
                             <NavItem onClick = {this.logOff.bind(this)}>PROFILE</NavItem>
                             :
-                            <LinkContainer to="/login">
+                            <LinkContainer to={{pathname: '/login', state: {redirect: this.props.redirect}}}>
                                 <NavItem >LOGIN</NavItem>
                             </LinkContainer>
                     }

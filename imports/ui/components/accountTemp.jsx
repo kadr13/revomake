@@ -3,11 +3,14 @@
  */
 
 import React, { Component } from 'react';
+import {Button} from 'react-bootstrap';
+import {browserHistory} from 'react-router';
 import ReactDOM from 'react-dom';
 import { Template } from 'meteor/templating';
 import { Blaze } from 'meteor/blaze';
 
 export default class Login extends Component {
+
     componentDidMount() {
         this.view = Blaze.render(Template.atForm, ReactDOM.findDOMNode(this.refs.container));
     }

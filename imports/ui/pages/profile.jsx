@@ -4,15 +4,34 @@
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import { createContainer } from 'meteor/react-meteor-data';
 import {Grid, Row, Col, Panel, Jumbotron, Image, Button, FormGroup, FormControl, ControlLabel, Thumbnail} from 'react-bootstrap'
 import Scroll from 'react-scroll';
 import ProductPreview from '../components/productPreview.jsx';
 import DesignerPreview from '../components/designerPreview.jsx'
 import {browserHistory} from 'react-router';
 
-export default class App extends Component {
+class Profile extends Component {
+
+
 
     render() {
+
+        if(!this.props.currentUser){
+            return (
+                <div className="myStorePage">
+                    <Grid fluid className="searchPage-resultView">
+                        <Row className="myStorePage-about">
+                            <Col>
+                                <p> Please Login First!</p>
+                            </Col>
+                        </Row>
+                    </Grid>
+                </div>
+            )
+        }
+        console.log(this.props.currentUser);
+        console.log(Meteor.user().name);
         return (
             <div className="myStorePage">
                 <Grid fluid className="searchPage-resultView">
@@ -22,7 +41,7 @@ export default class App extends Component {
                         </Col>
                         <Col md={3}>
                             <p>
-                                DESIGNER NAME
+                                Name: {this.props.currentUser.name}
                                 <br/>
                                 Subscribers: 14982
                                 <br/>
@@ -55,3 +74,10 @@ export default class App extends Component {
         );
     }
 }
+
+export default createContainer(() => {
+    Meteor.subscribe('userData');
+    return {
+        currentUser: Meteor.user(),
+    };
+}, Profile);
