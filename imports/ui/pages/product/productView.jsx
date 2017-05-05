@@ -4,7 +4,7 @@
 
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {Grid, Row, Col, Panel, Thumbnail, Image, Button, FormGroup, FormControl, MenuItem, DropdownButton, Carousel} from 'react-bootstrap'
+import {Grid, Row, Col, Panel, Thumbnail, Image, Button} from 'react-bootstrap'
 
 export default class ProductPreview extends Component {
 
@@ -13,6 +13,9 @@ export default class ProductPreview extends Component {
     }
 
     render() {
+
+        var id = this.props.routeParams.id;
+
         return(
             <div className="productPage">
                 <div className="productPage-mainView">

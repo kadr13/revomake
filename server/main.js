@@ -1,7 +1,11 @@
 import { Meteor } from 'meteor/meteor';
-import '../lib/config/atConfig';
-import '../lib/config/mail';
-import '../imports/startup/server/accounts/index';
+
+import '../imports/api/accounts/server/accountSentry';
+import '../imports/api/accounts/server/publications';
+import '../imports/api/accounts/cloudStorage';
+import '../imports/api/accounts/methods';
+
+import '../imports/startup/server/email';
 
 Meteor.startup(() => {
 
