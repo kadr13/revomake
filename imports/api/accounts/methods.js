@@ -1,8 +1,7 @@
 /**
- * Created by JohnBae on 4/6/17.
+ * Created by JohnBae on 4/29/17.
  */
 
-import {SimpleSchema} from 'meteor/accounts-base';
 import { Accounts } from 'meteor/accounts-base';
 
 Meteor.methods({
@@ -19,11 +18,11 @@ Meteor.methods({
 });
 
 Meteor.methods({
-    checkIfValidAccount (email, username, pwd, cPwd, facebook) {
+    checkIfValidAccount (email, username, pwd, cPwd) {
 
         var email = checkEmail(email);
-        var username = true;
-        var pwd = !(pwd != cPwd || pwd < 6);
+        var username = checkUsername(username);
+        var pwd = checkPwd(pwd, cPwd);
 
         return {
             username: username,
@@ -32,14 +31,6 @@ Meteor.methods({
         };
     }
 });
-
-function checkUsername(username){
-    return Meteor.users.findOne({username: username}) || username.length == 0 ? false : true;
-}
-
-function checkEmail(email){
-    return Meteor.users.findOne({'emails.address': email}) || email.length == 0 ? false : true;
-}
 
 Meteor.methods({
     addEmail(userId, email){
@@ -68,6 +59,28 @@ Meteor.methods({
 });
 
 Meteor.methods({
+    setAboutText(text){
+        var id = Meteor.userId();
+        Meteor.users.update(id, {
+            $set: {
+                about: text
+            }
+        });
+    }
+});
+
+Meteor.methods({
+    setProfileImg(url){
+        var id = Meteor.userId();
+        Meteor.users.update(id, {
+            $set: {
+                profileImg: url
+            }
+        });
+    }
+});
+
+Meteor.methods({
     sendEmail(to, from, subject, text) {
         console.log("SENDING EMAIL TO:", to, " WITH STUFF LIKE:", text)
         Email.send({ to, from, subject, text });
@@ -85,40 +98,14 @@ Meteor.methods({
     }
 });
 
-Accounts.onCreateUser(function(options, user) {
+function checkPwd(pwd, cPwd){
+    return !(pwd != cPwd || pwd < 6);
+}
 
-    if (user.services) {
+function checkUsername(username){
+    return Meteor.users.findOne({username: username}) || username.length == 0 ? false : true;
+}
 
-        var service = _.keys(user.services)[0];
-
-        if (service == 'facebook') {
-            var email = user.services[service].email;
-            var existingUser = Meteor.users.findOne({'emails.address': email});
-            if(existingUser) {
-                throw new Meteor.Error("email-exists","Email is already associated");
-            }
-            return user;
-        }
-        else if(service == 'password') {
-            var email = user.emails[0].address;
-            var existingUser = Meteor.users.findOne({'services.facebook.email': email});
-            if(existingUser) {
-                throw new Meteor.Error("email-exists","Email is already associated");
-            }
-            return user;
-        }
-    }
-});
-
-Meteor.publish('userData', function (userId) {
-    // Select only the users that match the array of IDs passed in
-    console.log("PUBLISHING", this.userId);
-    const selector = {
-        _id: this.userId
-    };
-    // Only return one field, `initials`
-    const options = {
-        fields: { name: 1 }
-    };
-    return Meteor.users.find(selector, options);
-});
+function checkEmail(email){
+    return Meteor.users.findOne({'emails.address': email}) || email.length == 0 ? false : true;
+}

@@ -4,7 +4,7 @@
 import { Accounts } from 'meteor/accounts-base';
 
 Accounts.emailTemplates.siteName = "Revomake";
-Accounts.emailTemplates.from     = "Revomake <admin@Revomake.com>";
+Accounts.emailTemplates.from = "Revomake <admin@Revomake.com>";
 
 Accounts.emailTemplates.verifyEmail = {
     subject() {

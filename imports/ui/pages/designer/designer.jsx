@@ -5,15 +5,14 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { createContainer } from 'meteor/react-meteor-data';
-import {Grid, Row, Col, Panel, Jumbotron, Image, Button, FormGroup, FormControl, ControlLabel, Thumbnail} from 'react-bootstrap'
+import {Grid, Row, Col, Thumbnail} from 'react-bootstrap'
 import Scroll from 'react-scroll';
-import ProductPreview from '../components/productPreview.jsx';
-import DesignerPreview from '../components/designerPreview.jsx'
+import ProductPreview from '../../components/productPreview.jsx';
 import {browserHistory} from 'react-router';
 
+import './designer.css';
+
 class Profile extends Component {
-
-
 
     render() {
 
@@ -31,13 +30,12 @@ class Profile extends Component {
             )
         }
         console.log(this.props.currentUser);
-        console.log(Meteor.user().name);
         return (
             <div className="myStorePage">
                 <Grid fluid className="searchPage-resultView">
                     <Row className="myStorePage-about">
                         <Col md={4}>
-                            <Thumbnail src="/assets/mockDesigner.png"/>
+                            <Thumbnail src={this.props.currentUser.profileImg || "/assets/mockProduct.png"}/>
                         </Col>
                         <Col md={3}>
                             <p>

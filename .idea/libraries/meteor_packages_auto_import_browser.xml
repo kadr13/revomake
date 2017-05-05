@@ -268,6 +268,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/callback-hook/1.0.10/web.browser/hook.js" />
         <item url="file://$USER_HOME$/.meteor/packages/webapp-hashing/1.0.9/web.browser/webapp-hashing.js" />
         <item url="file://$USER_HOME$/.meteor/packages/babel-runtime/1.0.1/web.browser/babel-runtime.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/edgee_slingshot/0.7.1/web.browser/packages/edgee_slingshot.js" />
         <item url="file://$USER_HOME$/.meteor/packages/templating-tools/1.1.2/web.browser/throw-compile-error.js" />
         <item url="file://$USER_HOME$/.meteor/packages/templating-tools/1.1.2/web.browser/html-scanner-tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/templating-tools/1.1.2/web.browser/code-generation.js" />
@@ -550,6 +551,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/callback-hook/1.0.10/web.browser/hook.js" />
       <root url="file://$USER_HOME$/.meteor/packages/webapp-hashing/1.0.9/web.browser/webapp-hashing.js" />
       <root url="file://$USER_HOME$/.meteor/packages/babel-runtime/1.0.1/web.browser/babel-runtime.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/edgee_slingshot/0.7.1/web.browser/packages/edgee_slingshot.js" />
       <root url="file://$USER_HOME$/.meteor/packages/templating-tools/1.1.2/web.browser/throw-compile-error.js" />
       <root url="file://$USER_HOME$/.meteor/packages/templating-tools/1.1.2/web.browser/html-scanner-tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/templating-tools/1.1.2/web.browser/code-generation.js" />

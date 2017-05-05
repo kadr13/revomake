@@ -2,12 +2,13 @@
  * Created by JohnBae on 12/26/16.
  */
 
-import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
-import {Grid, Row, Col, Panel, Jumbotron, Image, Button, FormGroup, FormControl, ControlLabel, HelpBlock} from 'react-bootstrap'
+import React, { Component } from 'react';
+import {Grid, Row, Col} from 'react-bootstrap'
 import Scroll from 'react-scroll';
-import ProductPreview from '../components/productPreview.jsx';
-import DesignerPreview from '../components/designerPreview.jsx'
+import ProductPreview from '../../components/productPreview.jsx';
+import DesignerPreview from '../../components/designerPreview.jsx'
+
+import './style.css';
 
 var key = 0;
 
@@ -49,8 +50,6 @@ export default class Home extends Component {
     }
 
     render() {
-
-        console.log(this);
 
         var Content;
 

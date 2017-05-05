@@ -3,13 +3,14 @@
  */
 
 import React, { Component } from 'react';
-import Register from '../components/register';
-import { Accounts } from 'meteor/accounts-base';
+import { createContainer } from 'meteor/react-meteor-data';
 import {Button} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap'
-import { Router, Route, Link, browserHistory, IndexRedirect} from 'react-router'
+import { browserHistory } from 'react-router'
 
-export default class Login extends Component{
+import './style.css';
+
+class Login extends Component{
 
     constructor(props){
         super(props);
@@ -21,6 +22,7 @@ export default class Login extends Component{
         this.loginWithFacebook = this.loginWithFacebook.bind(this);
         this.loginWithPwd = this.loginWithPwd.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.getRedirectAddress = this.getRedirectAddress.bind(this);
     }
 
     getRedirectAddress(){
@@ -43,13 +45,12 @@ export default class Login extends Component{
             }
             else if(self.state.error == "EMAIL ALREADY TAKEN"){
                 self.setState({error: ""});
-            }8
+            }
 
-            var name = Meteor.user().services.facebook.name;
+            var name = Meteor.user().name;
             var email = Meteor.user().services.facebook.email;
-
-            if(Meteor.user().username) {
-                browserHistory.push(self.getRedirectAddress())
+            if(name && email) {
+                browserHistory.push(self.getRedirectAddress());
             }
             else browserHistory.push({
                 pathname: 'register',
@@ -66,7 +67,6 @@ export default class Login extends Component{
         var self = this;
         Meteor.loginWithPassword({email: this.state.username}, this.state.password, function(err){
             if (err) {
-                console.log("ERR:", err);
                 self.setState({error: "INVALID LOGIN INFO"});
                 throw new Meteor.Error("Password login failed");
             }
@@ -84,10 +84,10 @@ export default class Login extends Component{
             <div id="loginPage-container">
                 <div id="loginPage-section">
                     <Button onClick = {this.loginWithFacebook}>Login with Facebook</Button>
-                    {this.state.error.length > 0 ? <div>{this.state.error}</div> : null}
+                    {this.state.error.length > 0 ? <div>{this.state.error}</div> : ""}
                     <form onSubmit={this.loginWithPwd}>
                         <div>
-                            <label>Email:</label>
+                            <label>Username:</label>
                             <input value = {this.state.username}
                                    onChange = {this.handleChange}
                                    name="username"
@@ -100,21 +100,34 @@ export default class Login extends Component{
                                    type = "password"
                                    name="password"
                                    id="password"/>
+                            <LinkContainer to={"recoverPassword"}>
+                                <Button>Forgot Password</Button>
+                            </LinkContainer>
                         </div>
                         <Button type = 'submit'>Login</Button>
                     </form>
                     <LinkContainer to={
-                    {
-                        pathname: '/register',
-                        state: {
-                            redirect: this.getRedirectAddress()
+                        {
+                            pathname: '/register',
+                            state: {
+                                redirect: this.getRedirectAddress()
+                            }
                         }
-                    }
                     }>
                         <Button>Register</Button>
+                    </LinkContainer>
+                    <LinkContainer to={this.getRedirectAddress()}>
+                        <Button>Cancel</Button>
                     </LinkContainer>
                 </div>
             </div>
         )
     }
 }
+
+export default createContainer(() => {
+    Meteor.subscribe('userData');
+    return {
+        currentUser: Meteor.user(),
+    };
+}, Login);
