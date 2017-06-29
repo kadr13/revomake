@@ -10,13 +10,22 @@ export default class BasicInfo extends Component{
 
     constructor(props){
         super(props);
-        this.state = {}
+
+        Meteor.subscribe('userData');
+
+        var profile = Meteor.user().profileImg || null,
+            about = Meteor.user().about || null;
+
+        this.state = {
+            profile: profile,
+            about: about
+        }
     }
 
     uploadProfile(){
         var uploader = new Slingshot.Upload("myFileUploads"),
             self = this;
-        console.log("SELF:", self);
+
         if(this.state.profile){
             uploader.send(input.files[0], function (error, downloadUrl) {
                 if (error) {
@@ -31,6 +40,7 @@ export default class BasicInfo extends Component{
             });
         }
         else {
+            if(self.refs.about.value) Meteor.call("setAboutText", self.refs.about.value);
             browserHistory.push("/register/2");
         }
     }
@@ -61,7 +71,8 @@ export default class BasicInfo extends Component{
                     </div>
                     <div>
                         <p>Basic Info: </p>
-                        <textarea ref = "about"/>
+                        <textarea ref = "about"
+                                  defaultValue={this.state.about}/>
                     </div>
                 </form>
                 <Button onClick = {()=> browserHistory.push(this.props.redirect)}>Later</Button>

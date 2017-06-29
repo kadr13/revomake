@@ -6,6 +6,7 @@ import CreateAccount from './createAccount';
 import BasicInfo from './basicInfo';
 import StoreSetup from './storeSetup';
 import Completed from './complete';
+import { browserHistory } from 'react-router'
 
 import './style.css';
 
@@ -13,16 +14,12 @@ export default class Register extends Component{
 
     constructor(props){
         super(props);
-        this.state = {
-            profile: "",
-            about: "",
-            storeName: ""
-        };
-        this.updateForm = this.updateForm.bind(this);
+
+        this.handleCrumb = this.handleCrumb.bind(this);
     }
 
-    updateForm(key, value){
-        this.setState({[key]: value});
+    handleCrumb(step){
+        browserHistory.push("/register/"+step);
     }
 
     render(){
@@ -52,6 +49,19 @@ export default class Register extends Component{
         return(
             <div id="loginPage-container">
                 <div id="loginPage-section">
+                    <div id="loginPage-breadcrumb">
+                        <button className={step!=0 ? "loginPage-breadcrumb-pinnedCrumb" : "loginPage-breadcrumb-currentCrumb"}
+                                disabled="true"/>
+                        <button className={step!=1 ? "loginPage-breadcrumb-crumb" : "loginPage-breadcrumb-currentCrumb"}
+                                disabled={step == 0}
+                                onClick = {()=>this.handleCrumb(1)}/>
+                        <button className={step!=2 ? "loginPage-breadcrumb-crumb" : "loginPage-breadcrumb-currentCrumb"}
+                                disabled={step == 0}
+                                onClick = {()=>this.handleCrumb(2)}/>
+                        <button className={step!=3 ? "loginPage-breadcrumb-crumb" : "loginPage-breadcrumb-currentCrumb"}
+                                disabled={step == 0}
+                                onClick = {()=>this.handleCrumb(3)}/>
+                    </div>
                     {stepContainer}
                 </div>
             </div>

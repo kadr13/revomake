@@ -4,8 +4,8 @@
 
 import React, { Component } from 'react';
 import {LinkContainer} from 'react-router-bootstrap';
-import {Navbar, NavItem, Nav, FormGroup, FormControl, Button} from 'react-bootstrap'
-import './navBar.css';
+import {Navbar, NavItem, Nav, Button} from 'react-bootstrap'
+import './style.css';
 
 class NavBar extends Component{
 
@@ -34,8 +34,8 @@ class NavBar extends Component{
                         <LinkContainer to="/home">
                             <NavItem>HOME</NavItem>
                         </LinkContainer>
-                        <LinkContainer to="/profile">
-                            <NavItem>MY STORE</NavItem>
+                        <LinkContainer to="/home">
+                            <NavItem></NavItem>
                         </LinkContainer>
                         <LinkContainer to="/cart">
                             <NavItem >CART</NavItem>
@@ -62,26 +62,32 @@ export default class TestNavBar extends Component{
     }
 
     render(){
+
         return(
             <div id="navBar">
                 <LinkContainer to="/home">
-                    <Button>LOGO</Button>
+                    <Button id="navBar-logo">
+                        <img style={{verticalAlign: "middle", marginLeft: "25px"}}
+                             width="200"
+                             src="/assets/revomakeLogo.png"/>
+                    </Button>
                 </LinkContainer>
+                <input className="navBar-search"/>
                 <LinkContainer to="/home">
-                    <Button>HOME</Button>
+                    <Button className="navBar-elements">HOME</Button>
                 </LinkContainer>
                 <LinkContainer to="/profile">
-                    <Button>MY STORE</Button>
+                    <Button className="navBar-elements">MY STORE</Button>
                 </LinkContainer>
                 <LinkContainer to="/cart">
-                    <Button >CART</Button>
+                    <Button className="navBar-elements">CART</Button>
                 </LinkContainer>
                 {
                     this.props.currentUser ?
-                        <Button onClick = {this.logOff.bind(this)}>LOGOUT</Button>
+                        <Button className="navBar-elements" onClick = {this.logOff.bind(this)}>LOGOUT</Button>
                         :
                         <LinkContainer to={{pathname: '/login', state: {redirect: this.props.redirect}}}>
-                            <Button >LOGIN</Button>
+                            <Button className="navBar-elements">LOGIN</Button>
                         </LinkContainer>
                 }
             </div>

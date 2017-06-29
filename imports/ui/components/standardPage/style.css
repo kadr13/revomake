@@ -1,0 +1,13 @@
+.standardPage-container{
+    width: 100%;
+    min-height: 100vh;
+    margin: 10px auto;
+    background: transparent;
+}
+
+.standardPage-section{
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}

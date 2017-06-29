@@ -9,29 +9,40 @@
     transition: all .3s;
 }
 
+html{
+    background-color: #FFFFFF;
+}
+
 body {
-    background-color: #e4e3e0;
+    background-color: #FFFFFF;
 }
 
 @font-face {
     font-family: openSans;
-    src: url(/open-sans/OpenSans-Light.ttf);
+    src: url("/open-sans/OpenSans-Light.ttf");
 }
 
 @font-face {
     font-family: openSans-Bold;
-    src: url(/open-sans/OpenSans-Regular.ttf);
+    src: url("/open-sans/OpenSans-Regular.ttf");
 }
 
 h1, h2, p, ul, li, a {
     font-family: openSans;
 }
 
-.masterContainer{
+#masterContainer{
     box-shadow: none;
     border: none;
     outline: none;
     background-color: #FFFFFF;
+}
+
+#masterContainer-container{
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 

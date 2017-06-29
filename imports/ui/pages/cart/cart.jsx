@@ -4,7 +4,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import {Grid, Row, Col, Panel, Jumbotron, Image, Button, FormGroup, FormControl, ControlLabel, HelpBlock} from 'react-bootstrap'
-import ProductPreview from '../../components/productPreview.jsx';
+import ProductPreview from '../../components/preview/main.jsx';
 
 import './cart.css';
 
