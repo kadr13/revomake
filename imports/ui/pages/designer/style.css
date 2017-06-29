@@ -1,10 +1,11 @@
-.designerPreview{
+.storePage-section{
+    position: relative;
     width: 100%;
-    margin: 10px auto;
-    background: transparent;
+    height: 100%;
+    margin: auto;
 }
 
-.designerPreview-portrait{
+.storePage-portrait{
     width: 100%;
     height: auto;
     margin-right: auto;
@@ -13,14 +14,14 @@
     vertical-align: middle;
 }
 
-.designerPreview-title{
+.storePage-title{
     background-color: #f4f4f2;
     color: #666666;
     text-align: center;
     padding: 10px;
 }
 
-.img-thumbnail {
+.preview-img-thumbnail {
     padding: 4px;
     line-height: 1.42857143;
     background-color: #ffffff;

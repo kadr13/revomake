@@ -59,6 +59,17 @@ Meteor.methods({
 });
 
 Meteor.methods({
+    setStore(text){
+        var id = Meteor.userId();
+        Meteor.users.update(id, {
+            $set: {
+                store: text
+            }
+        });
+    }
+});
+
+Meteor.methods({
     setAboutText(text){
         var id = Meteor.userId();
         Meteor.users.update(id, {

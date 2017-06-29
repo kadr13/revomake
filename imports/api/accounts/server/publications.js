@@ -9,7 +9,7 @@ Meteor.publish('userData', function () {
     };
 
     const options = {
-        fields: { name: 1, profile: 1, profileImg: 1}
+        fields: { name: 1, profile: 1, profileImg: 1, about: 1, store: 1}
     };
 
     return Meteor.users.find(selector, options);

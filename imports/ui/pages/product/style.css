@@ -1,0 +1,64 @@
+.productPage{
+    position: relative;
+    background: white;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.productPage-mainView{
+    width: 100%;
+    height: 100%;
+    padding-top: 25px;
+}
+
+.productPage-reviews{
+    width: 100%;
+}
+
+.productPage-sideView{
+    overflow: scroll;
+    padding: 10px;
+}
+
+.productPage-item{
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.productPage-price{
+    font-size: 1.75rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.productPage-designer{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.productPage-reviews-title{
+    border-bottom: black solid 2px;
+}
+
+.productPage-action{
+    width: 100%;
+    background: black;
+    margin-bottom: 5px;
+    border-radius: 0;
+    border: black;
+    outline: none;
+    color: white;
+}
+
+.productPage-action:hover{
+    color: white;
+    background: #313131;
+    outline: none;
+}
+
+.productPage-action:active,
+.productPage-action:hover{
+    color: white;
+    background: black;
+    outline: none;
+}

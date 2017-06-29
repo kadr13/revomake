@@ -83,7 +83,9 @@ class Login extends Component{
         return(
             <div id="loginPage-container">
                 <div id="loginPage-section">
-                    <Button onClick = {this.loginWithFacebook}>Login with Facebook</Button>
+                    <h1 id="loginPage-section-title">Revomake Login</h1>
+                    <Button className="loginPage-actionButton"
+                            onClick = {this.loginWithFacebook}>Login with Facebook</Button>
                     {this.state.error.length > 0 ? <div>{this.state.error}</div> : ""}
                     <form onSubmit={this.loginWithPwd}>
                         <div>
@@ -101,10 +103,10 @@ class Login extends Component{
                                    name="password"
                                    id="password"/>
                             <LinkContainer to={"recoverPassword"}>
-                                <Button>Forgot Password</Button>
+                                <Button className="loginPage-actionButton">Forgot Password</Button>
                             </LinkContainer>
                         </div>
-                        <Button type = 'submit'>Login</Button>
+                        <Button className="loginPage-actionButton" type = 'submit'>Login</Button>
                     </form>
                     <LinkContainer to={
                         {
@@ -114,10 +116,10 @@ class Login extends Component{
                             }
                         }
                     }>
-                        <Button>Register</Button>
+                        <Button className="loginPage-actionButton">Register</Button>
                     </LinkContainer>
                     <LinkContainer to={this.getRedirectAddress()}>
-                        <Button>Cancel</Button>
+                        <Button className="loginPage-actionButton">Cancel</Button>
                     </LinkContainer>
                 </div>
             </div>

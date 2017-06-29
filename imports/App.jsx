@@ -4,10 +4,11 @@
 
 import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
-import NavBar from './ui/components/navBar/navBar.jsx'
+import NavBar from './ui/components/navBar/main.jsx'
 
 import './ui/stylesheets/bootstrap.css'
 import './ui/stylesheets/global.css'
+import './ui/stylesheets/customBootstrap.css'
 
 class App extends Component {
 
@@ -16,13 +17,15 @@ class App extends Component {
     }
 
     componentDidUpdate(){
+        var sub = Meteor.subscribe("userData"),
+            self = this;
+        sub.ready(function(){
+            var registering = self.props.children.props.route.registration;
+            if(self.props.currentUser && self.props.currentUser.name && !registering){
+                Meteor.logout();
+            }
+        });
 
-        var registering = this.props.children.props.route.registration;
-        console.log("registering?", registering);
-        if(Meteor.user() && !Meteor.user().name && !registering){
-            console.log("LOGGING OUT");
-            Meteor.logout();
-        }
     }
 
     render() {
@@ -30,17 +33,21 @@ class App extends Component {
 
         if(showNavBar){
             return (
-                <div className = "masterContainer">
+                <div id = "masterContainer">
                     <NavBar currentUser = {this.props.currentUser}
                             redirect = {this.props.location.pathname}/>
-                    {this.props.children}
+                    <div id="masterContainer-container">
+                        {this.props.children}
+                    </div>
                 </div>
             );
         }
         else{
             return (
-                <div className = "masterContainer">
-                    {this.props.children}
+                <div className = "masterContainer-container">
+                    <div id="masterContainer-container">
+                        {this.props.children}
+                    </div>
                 </div>
             );
         }
@@ -48,7 +55,6 @@ class App extends Component {
 }
 
 export default createContainer(() => {
-    Meteor.subscribe("userData");
     return {
         currentUser: Meteor.user(),
     };

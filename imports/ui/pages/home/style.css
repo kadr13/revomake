@@ -1,28 +1,38 @@
 .homePage {
     position: relative;
     background: #FFFFFF;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 100%;
 }
 
 .homePage-showBy-bar {
     position: relative;
-    margin: 15px;
-    margin-top: 30px;
+    margin: 15px 15px 15px;
+    text-align: center;
+    border-bottom: solid black 1px;
     width: calc(100% - 30px);
 }
 
-.homePage-showBy-text {
+.homePage-showBy-button,
+.homePage-showBy-button:hover{
     color: #313131;
     font-size: 140%;
-    float: right;
     margin-right: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    border-bottom: solid white 5px;
 }
 
-a:hover {
-    cursor: pointer;
-    color: #313131;
-    text-decoration: underline;
+.homePage-showBy-button:hover{
+    background: #f4f4f4;
+}
+
+.homePage-showBy-button.btn-default.active,
+.homePage-showBy-button.btn-default.active:hover{
+    background: white!important;
+    box-shadow: none!important;
+    border-bottom: solid black 5px;
 }
 
 .homePage-content {
@@ -30,18 +40,20 @@ a:hover {
     width: 100%;
 }
 
-.homePage-content h1 {
-    color: #313131;
-    font-size: 150%;
-    text-transform: uppercase;
-    padding: 0px;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    border-bottom: 1px solid;
-    
-}
-
 .homePage-loadMoreButton {
     width: 100%;
     margin: 10px auto;
+}
+
+.homePage-section{
+    margin-bottom: 50px;
+}
+
+.homePage-section-title {
+    color: #313131;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 0px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
