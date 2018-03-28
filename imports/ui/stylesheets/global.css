@@ -31,23 +31,15 @@ h1, h2, p, ul, li, a {
     font-family: openSans;
 }
 
-#masterContainer{
+b{
+    font-family: openSans-Bold;
+}
+
+#bootstrap-overrides{
     box-shadow: none;
     border: none;
     outline: none;
     background-color: #FFFFFF;
-}
-
-#masterContainer-container{
-    max-width: 1000px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-b{
-  font-family: openSans-Bold;
 }
 
 .center-block{

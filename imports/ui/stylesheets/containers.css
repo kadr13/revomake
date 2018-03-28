@@ -1,0 +1,132 @@
+.banner-container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: white;
+}
+
+.default-container{
+    max-width: 1250px;
+    margin: auto;
+    padding: 2.5% 5%;
+}
+
+.wide-container{
+    width: 100%;
+    max-width: 100%;
+}
+
+.tight-container{
+    max-width: 750px;
+    margin: auto;
+    padding: 2.5% 5%;
+}
+
+.category-container {
+    position: relative;
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+
+    max-width: 1000px;
+    width: 100%;
+    min-height: 75vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.right-container{
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0) 50%, rgb(255, 255, 255) 0px, rgb(255, 255, 255));
+}
+
+.left-container{
+    background: linear-gradient(90deg, rgb(255, 255, 255) 0px, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0));
+}
+
+.inner-container{
+    max-width: 900px;
+}
+
+.tight-container{
+    max-width: 750px;
+}
+
+.card-container,
+.price-card{
+    margin-bottom: 10px;
+    min-height: 300px;
+    position: relative;
+    background: white;
+    padding: 30px 10px 10px;
+    border: 1px solid #CBCBCB;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.price-card{
+    transition: all .3s ease-in-out;
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+#bootstrap-overrides .col-item-list {
+    text-align: center;
+}
+
+.center-container{
+    text-align: center;
+}
+
+.col-item-list .center-container{
+    padding: 1rem;
+}
+
+.staggered-container{
+    padding-top: 15rem;
+}
+
+.staggered-container-title{
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0px 2px 0 rgba(0, 0, 0, 0.12);
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    background: black;
+    padding: 60px 40px 10px;
+    width: 250px;
+    right: 0;
+    margin: 0 auto;
+}
+
+#bootstrap-overrides .col-centered {
+    vertical-align: top;
+    display: inline-block;
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 750px){
+
+    .category-container{
+        min-height: 0;
+    }
+
+    .staggered-container-title{
+        display: none;
+    }
+
+    .staggered-container{
+        padding-top: 8rem;
+    }
+
+    .card-container{
+        min-height: 0;
+    }
+
+    .inner-container{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+}

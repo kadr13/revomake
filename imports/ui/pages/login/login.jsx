@@ -26,8 +26,11 @@ class Login extends Component{
     }
 
     getRedirectAddress(){
+        console.log(this.props);
         var redirect = this.props.location.state ? this.props.location.state.redirect : "/home";
         if(redirect=="/login") redirect = "/home";
+        if(!redirect) redirect = "/home";
+        console.log("TRYING:", redirect);
         return redirect;
     }
 

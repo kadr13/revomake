@@ -13,11 +13,13 @@
 }
 
 .homePage-showBy-button,
-.homePage-showBy-button:hover{
+.homePage-showBy-button:hover,
+.homePage-showBy-button:focus{
     color: #313131;
     font-size: 140%;
     margin-right: 30px;
-    background: transparent;
+    background: transparent!important;
+    box-shadow: none!important;
     border: none;
     outline: none;
     border-radius: 0;
