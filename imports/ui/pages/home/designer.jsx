@@ -11,6 +11,9 @@ var key = 0;
 export default class DesignerView extends Component {
 
     render(){
+
+        console.log("DESIGNERS");
+
         return(
             <Grid fluid>
                 <Row >

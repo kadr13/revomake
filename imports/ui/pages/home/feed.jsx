@@ -12,6 +12,8 @@ export default class FeedView extends Component {
 
     render(){
 
+        console.log("FEED");
+
         return(
             <Grid fluid>
                 <Row>
@@ -60,3 +62,5 @@ export default class FeedView extends Component {
         );
     }
 }
+
+

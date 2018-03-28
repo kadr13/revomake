@@ -2,31 +2,36 @@
     position: relative;
     background-color: #000000;
     width: 100%;
-    height: 100%;
+    height: 46px;
 }
 
 #navBar-logo,
 .navBar-elements,
+.navBar-elements:focus,
 .navBar-elements:hover{
     background: transparent;
     border: none;
     outline: none;
     color: white;
     border-radius: 0;
-}
-
-#navBar-logo{
-    background-color: transparent!important;
+    margin-top: 6px;
 }
 
 .navBar-elements {
-    margin-top: 25px;
+    margin-right: 15px;
+    margin-top: 6px;
 }
 
-.navBar-elements:active{
-    background: white;
-    color: black;
-    border-radius: 0;
+.navBar-elements.btn-default.active,
+.navBar-elements.btn-default.active:focus,
+.navBar-elements.btn-default.active:hover{
+    background-color: white!important;
+    border-color: white;
+}
+
+
+#navBar-logo{
+    background-color: transparent!important;
 }
 
 .navBar-search{;
@@ -37,10 +42,4 @@
     margin-left: 15%;
     outline: none;
     border: none;
-}
-
-.navBar-elements.btn-default.active,
-.navBar-elements.btn-default.active:hover{
-    background-color: white!important;
-    border-color: white;
 }

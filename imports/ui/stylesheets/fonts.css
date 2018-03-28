@@ -1,0 +1,34 @@
+html{
+    font-size: 12px;
+    word-wrap: break-word;
+    font-family: sans-serif;
+}
+
+h1{
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+h2{
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+h3{
+    font-size: 2.0rem;
+    color: darkgrey;
+    font-weight: 300;
+}
+
+p{
+    font-size: 1.5rem;
+    line-height: 1.75;
+    font-weight: 300;
+}
+@media (max-width: 750px){
+
+    html {
+        font-size: 12px;
+    }
+
+}

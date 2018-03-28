@@ -3,60 +3,13 @@
  */
 
 import React, { Component } from 'react';
+import { withTracker } from 'meteor/react-meteor-data';
 import {LinkContainer} from 'react-router-bootstrap';
 import {Navbar, NavItem, Nav, Button} from 'react-bootstrap'
 import './style.css';
 
 class NavBar extends Component{
 
-    logOff(){
-        AccountsTemplates.logout();
-    }
-
-    render(){
-        const {...rest} = this.props;
-        return(
-            <Navbar inverse collapseOnSelect>
-                <Navbar.Header>
-                    <Navbar.Brand>
-                        <div className = 'navbar-Logo' onClick={()=>browserHistory.push('/home')}></div>
-                    </Navbar.Brand>
-                    <Navbar.Toggle />
-                </Navbar.Header>
-                <Navbar.Collapse>
-                    <Nav pullRight >
-                        {/*<Navbar.Form pullLeft>
-                         <FormGroup>
-                         <FormControl type="text" placeholder="Search" />
-                         </FormGroup>
-                         {' '}
-                         </Navbar.Form>*/}
-                        <LinkContainer to="/home">
-                            <NavItem>HOME</NavItem>
-                        </LinkContainer>
-                        <LinkContainer to="/home">
-                            <NavItem></NavItem>
-                        </LinkContainer>
-                        <LinkContainer to="/cart">
-                            <NavItem >CART</NavItem>
-                        </LinkContainer>
-                        {
-                            this.props.currentUser ?
-                                <NavItem onClick = {this.logOff.bind(this)}>LOGOUT</NavItem>
-                                :
-                                <LinkContainer to={{pathname: '/login', state: {redirect: this.props.redirect}}}>
-                                    <NavItem >LOGIN</NavItem>
-                                </LinkContainer>
-                        }
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
-
-        );
-    }
-}
-
-export default class TestNavBar extends Component{
     logOff(){
         AccountsTemplates.logout();
     }
@@ -74,13 +27,24 @@ export default class TestNavBar extends Component{
                 </LinkContainer>
                 <input className="navBar-search"/>
                 <LinkContainer to="/home">
-                    <Button className="navBar-elements">HOME</Button>
+                    <Button className="navBar-elements">
+                        HOME
+                    </Button>
                 </LinkContainer>
+                {/*<LinkContainer to="/cart">
+                    <Button className="navBar-elements">
+                        SEARCH
+                    </Button>
+                </LinkContainer>*/}
                 <LinkContainer to="/profile">
-                    <Button className="navBar-elements">MY STORE</Button>
+                    <Button className="navBar-elements">
+                        MY STORE
+                    </Button>
                 </LinkContainer>
                 <LinkContainer to="/cart">
-                    <Button className="navBar-elements">CART</Button>
+                    <Button className="navBar-elements">
+                        CART
+                    </Button>
                 </LinkContainer>
                 {
                     this.props.currentUser ?
@@ -94,3 +58,11 @@ export default class TestNavBar extends Component{
         )
     }
 }
+
+export default withTracker(props => {
+
+    return {
+        currentUser: Meteor.user(),
+    };
+
+})(NavBar);

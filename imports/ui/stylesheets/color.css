@@ -1,0 +1,44 @@
+#bootstrap-overrides .red{
+    color: red!important;
+}
+
+#bootstrap-overrides .pink{
+    color: #FB4473!important;
+}
+
+#bootstrap-overrides .blue{
+    color: #1E86F3!important;
+}
+
+#bootstrap-overrides .orange{
+    color: #ED903D!important;
+}
+
+#bootstrap-overrides .purple{
+    color: #8900FF!important;
+}
+
+#bootstrap-overrides .black{
+    color: #1F1F1F!important;
+}
+
+
+#bootstrap-overrides .gray{
+    color: #B9B5B5 !important;
+}
+
+#bootstrap-overrides .selected-blue{
+    border: solid 1px #1E86F3!important;
+}
+
+#bootstrap-overrides .selected-purple{
+    border: solid 1px #8900FF!important;
+}
+
+#bootstrap-overrides .selected-pink{
+    border: solid 1px #FB4473!important;
+}
+
+#bootstrap-overrides .selected-orange{
+    border: solid 1px #ED903D!important;
+}

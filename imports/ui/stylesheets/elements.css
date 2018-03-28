@@ -1,0 +1,281 @@
+hr{
+    border: 1px #e7ebee solid;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.images{
+    width: 1000px;
+}
+
+.App-logo {
+    height: 40px;
+}
+
+.image-earth{
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    max-height: 50vw;
+    bottom: 0px;
+    background-clip: content-box;
+    background: url(../assets/earth.svg) no-repeat;
+    background-position: top;
+    background-size: 100%;
+}
+
+.image-moon{
+    max-width: 125px;
+    width: 25%;
+    position: absolute;
+    bottom: 60%;
+    right: 5%;
+}
+
+#bannerImage{
+    background-size: cover!important;
+    background: url(../assets/banner.svg) no-repeat;
+}
+
+#menuBar{
+    position: relative;
+    background: transparent;
+    padding-top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 50px;
+    width: calc(100% - 20px);
+}
+
+.menuBar-item-left {
+    float: left;
+    display: inline-block;
+    min-width: 50px;
+    height: 50px;
+}
+
+.menuBar-item-right {
+    float: right;
+    display: inline-block;
+    min-width: 50px;
+    line-height: 50px;
+    height: 50px;
+}
+
+#footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height:125px;
+    width:100%;
+    background: #2A6AA0;
+}
+
+/*-----Rotating Text Styling in Homepage-----*/
+.react-rotating-text-cursor {
+    font-size: 4rem;
+    color: #FB4473;
+    animation: blinking-cursor 1.5s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s infinite;
+}
+
+@keyframes blinking-cursor {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*-----Arrow Icon on Buttons-----*/
+i.arrow {
+    margin-left: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+
+    animation: blinking-arrow 1.5s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s infinite;
+}
+
+@keyframes blinking-arrow {
+    0% {
+        transform:translateX(0) rotate(-45deg);
+    }
+    50% {
+        transform:translateX(10px) rotate(-45deg);
+    }
+    100% {
+        transform:translateX(0) rotate(-45deg);
+    }
+}
+
+/*-----Pulsating Icons-----*/
+i.pulse{
+    margin-left: 10px;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+
+    animation: pulse 1.5s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*-----Icon Oriented Left-----*/
+.sideIconL{
+    margin-top: 5rem;
+    position: absolute;
+    left: -15rem;
+    color: #FB4473;
+    font-size: 20rem;
+}
+
+/*-----Icon Oriented Right-----*/
+.sideIconR{
+    margin-top: 5rem;
+    position: absolute;
+    right: -15rem;
+    color: dodgerblue;
+    font-size: 20rem;
+}
+
+/*-----Title Decorator-----*/
+.stripe-top{
+    border: solid 2px;
+    text-align: center;
+    display: block;
+    width: 75px;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.button{
+    outline: none;
+    border: none;
+    color: white;
+    padding: .75rem 3rem;
+    background: #1F1F1F;
+    box-shadow: none;
+}
+.button:hover,
+.button:focus,
+.button:active{
+    background: #373737;
+    color: white;
+}
+
+/*-----Big Button-----*/
+.bigButton{
+    color: white;
+    padding: .75rem 7rem!important;
+}
+
+/*-----Small Button-----*/
+.smallButton{
+    padding: .75rem 1rem!important;
+}
+
+/*-----Input Settings-----*/
+input{
+    transition: all .3s ease-in-out;
+    border: 1px solid #CBCBCB;
+    outline: none;
+}
+
+input:focus{
+    border: 1px solid #1E86F3;
+}
+
+input:disabled{
+    color: #CBCBCB;
+}
+
+/*-----Big Input Settings-----*/
+.bigInput{
+    padding: .6rem;
+}
+
+/*-----Small Input Settings-----*/
+.minInput{
+    padding: .2rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #CBCBCB;
+    width: 150px;
+    display: inline;
+    text-align: center!important;
+    margin-left: 10px;
+}
+
+.minInput:focus{
+    border:none;
+    border-bottom: 1px solid #1E86F3;
+}
+
+#bootstrap-overrides .contact-form .bigInput{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/*-----Responsive Settings-----*/
+@media (max-width: 750px){
+
+    .sideIconL{
+        position: relative;
+        left: 0;
+        margin: auto;
+        color: #FB4473;
+        font-size: 20rem;
+    }
+
+    .sideIconR{
+        position: relative;
+        right: 0;
+        margin: auto;
+        color: #1E86F3;
+        font-size: 20rem;
+    }
+
+    .images{
+        width: 300px;
+    }
+
+    .image-earth{
+        width: 100%;
+        height: 300px;
+        max-height: 300px;
+        position: absolute;
+        bottom: -50px;
+        background: url(../assets/earth.svg) no-repeat;
+        background-position: top;
+        background-size: 250%;
+    }
+
+    .image-moon{
+        max-width: 50px;
+        width: 15%;
+        position: absolute;
+        bottom: 25%;
+        right: 5%;
+    }
+
+    .App-logo {
+        height: 25px;
+    }
+
+}
